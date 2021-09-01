@@ -8,6 +8,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import ToDoList from './ToDoList';
 import { v4 as uuidv4 } from 'uuid';
 import { serialize } from 'uri-js';
+import './style.css';
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 function App() {
@@ -69,7 +70,9 @@ function handleClearTodos() {
     //Component means a file that is being inlcuded in here
     //<> We can return our 2 things by using this wrapping it in a empty element
     <>
-      <div>Enter your ToDos below:</div>
+      <div>
+      <h1>Enter your ToDos below:</h1>
+      </div>
       <ToDoList todos={todos} toggleTodo={toggleTodo}/>
       <input ref={todoNameRef} type = "text" />
       <button onClick={handleAddToDo}>Add ToDo</button>
